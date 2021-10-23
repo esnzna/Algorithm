@@ -11,7 +11,7 @@ void quick_sort(int q[], int l, int r)
         //do i ++ ; while (q[i] < x);
         //do j -- ; while (q[j] > x);
         while(q[++i]<x);
-        while(q[++j]<x);
+        while(q[--j]>x);
         if (i < j) swap(q[i], q[j]);
     }
     //第二步：递归处理子问题
