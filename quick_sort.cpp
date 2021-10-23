@@ -19,7 +19,20 @@ void quick_sort(int q[], int l, int r)
     //第三步：子问题合并.快排这一步不需要操作，但归并排序的核心在这一步骤
 }
 
+//y总代码，把j换成i的时候
+void quick_sort(int q[], int l, int r)
+{
+    if(l >= r) return;
 
+    int i = l - 1, j = r + 1, x = q[l + r + 1 >> 1];//注意是向上取整,因为向下取整可能使得x取到q[l]
+    while(i < j)
+    {
+        do i++; while(q[i] < x);
+        do j--; while(q[j] > x);
+        if(i < j) swap(q[i], q[j]);
+    }
+    quick_sort(q, l, i - 1), quick_sort(q, i, r);//不用q[l..i],q[i+1..r]划分的道理和分析4中j的情况一样
+}
 
 
 
