@@ -10,6 +10,7 @@ void quick_sort(int q[], int l, int r)
     {
         //do i ++ ; while (q[i] < x);
         //do j -- ; while (q[j] > x);
+	//如果需要从大到小排序，则将下面两句的大于号和小于号互换
         while(q[++i]<x);
         while(q[--j]>x);
         if (i < j) swap(q[i], q[j]);
