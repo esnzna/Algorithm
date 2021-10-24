@@ -37,6 +37,25 @@ void quick_sort(int q[], int l, int r)
 
 
 
+//不用将i从l-1, 和j从r+1开始, 也不用使用do while
+void quick_sort(int a[],int l,int r){
+    if(l>=r) return;
+    int i = l, j = r;
+    int x = a[(l+r)/2];
+    while(i<j){
+        while(a[i]<x) ++i;
+        while(a[j]>x) --j;
+        if(i<=j){
+            swap(a[i],a[j]);
+            ++i,--j;
+        }
+    }//while(i<=j);
+    quick_sort(a,l,j);
+    quick_sort(a,i,r);
+}
+
+
+
 //网友改，可用于没有do while 和没有++运算符的语言如js，可以通过
 void quick_sort(int q[], int l, int r)
 {
