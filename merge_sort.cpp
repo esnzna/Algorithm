@@ -4,7 +4,7 @@ void merge_sort(int q[], int l, int r)
     if(l >= r) return;
 
     //第一步：分成子问题
-    int mid = l + r >> 1; //防溢出写法：int mid = l+((r-l)>>1); 
+    int mid = l + r >> 1; //防溢出写法：int mid = l+((r-l)>>1); 其实这样写，也可能溢出，因为当l为非常小的负数时会溢出（但是对于下标的情况一般不会）
 
     //第二步：递归处理子问题
     merge_sort(q, l, mid ), merge_sort(q, mid + 1, r);
